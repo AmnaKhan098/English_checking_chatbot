@@ -2,11 +2,8 @@ import os
 import streamlit as st
 from groq import Groq
 
-# Set the Groq API key (for demo purposes; in production, avoid hardcoding it directly in the script)
-os.environ["GROQ_API_KEY"] = "xai-TO16k6oc972KlYMH2UeUB1uJFJKFPu7nVGA8crTwMty6dRlLvl8wtFTeajNbdiK41YOdggxzJnaMA3U9"
-
 # Initialize Groq client
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 # Arrays storing essay topics for each plan
 essays_30_day_plan = [
